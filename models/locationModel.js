@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const defaultLocationImage = require('../assets/default/location')
+// const defaultLocationImage = require('../assets/default/location')
 
 const locationModel = new mongoose.Schema(
     {
