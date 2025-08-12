@@ -1,16 +1,3 @@
-// const mongoose = require('mongoose')
-// const Category = require('../models/locationModel')
-// const dotenv = require('dotenv')
-
-// dotenv.config();
-
-// const locations = [
-//     {
-//         name:''
-//     }
-// ]
-
-
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Location = require('../models/locationModel');
@@ -29,7 +16,7 @@ const rawLocations = [
 const locations = rawLocations.map(name => ({
   name,
   slug: slugify(name),
-  image: '',
+  image: 'www.imge.com',
   status: 1,
   description: `${name} is a location in The Gambia.`
 }));

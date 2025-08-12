@@ -14,6 +14,7 @@ exports.getProfile = async (req, res) => {
       about: user.about,
       profileImage: user.profileImage,
       userType: user.userType,
+      role: user.role,
       isVerified: user.isVerified,
       status : user.status
     });

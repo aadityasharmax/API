@@ -14,6 +14,8 @@ const rateLimit = require('express-rate-limit');
 const { getCategories } = require('./controllers/categoryController');
 const { getLocations } = require('./controllers/locationController');
 
+const listingRoutes = require('./routes/listingRoutes')
+
 // Load .env variables
 dotenv.config();
 
@@ -63,6 +65,13 @@ app.use('/uploads', express.static('uploads'));
 app.use('/categories', getCategories)
 
 app.use('/locations',getLocations)
+
+
+// Listing routes
+
+app.use('/api', listingRoutes)
+
+
 
 // Default route for base URL
 app.get('/', (req, res) => res.send('API is running'));

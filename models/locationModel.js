@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-// const defaultLocationImage = require('../assets/default/location')
 
 const locationModel = new mongoose.Schema(
     {
@@ -18,7 +17,7 @@ const locationModel = new mongoose.Schema(
 
         image : {
             type : String,
-            // required : true
+            // default : ''
         },
 
         status : {

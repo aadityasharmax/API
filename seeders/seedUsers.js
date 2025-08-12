@@ -16,13 +16,24 @@ const seedUsers = async () => {
     // Create new users 
     const users = [
       {
-        name: 'User',
-        email: 'user@example.com',
+        name: 'User1',
+        email: 'aaditya@remoteresource.com',
         phone: '9999999999',
-        password: await bcrypt.hash('test123', 10),
+        password: await bcrypt.hash('Test@123', 10),
         isVerified: false,
-        profileImage: "www.image.com"
+        profileImage: "www.image.com",
+        role: "user"
       },
+
+      {
+        name: 'Seller1',
+        email: 'shreesh@remoteresource.com',
+        phone: '9999999998',
+        password: await bcrypt.hash('Test@12345', 12),
+        isVerified: false,
+        profileImage: "www.image.com",
+        role: 'seller'
+      }
     ];
 
     // Insert users in the database collection

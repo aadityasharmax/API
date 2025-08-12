@@ -13,9 +13,6 @@ const validateEmail = async (email) => {
 
     const data = res.data;
 
-    // Optional logging for debugging:
-    // console.log(data);
-
     if (!data.is_valid_format.value) {
       return { valid: false, reason: "Invalid email format" };
     }

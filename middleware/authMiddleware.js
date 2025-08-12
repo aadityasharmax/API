@@ -5,10 +5,6 @@ const BlacklistedToken = require('../models/blacklistedToken');
 exports.requireAuth = async (req, res, next) => {
 
   const rawHeader = req.headers.authorization;
-
-
-  // const token = req.headers.authorization?.split(" ")[1];
-
   const token = rawHeader?.startsWith('Bearer ')
     ? rawHeader.split(' ')[1]
     : rawHeader;
@@ -20,7 +16,7 @@ exports.requireAuth = async (req, res, next) => {
 
   const isBlacklisted = await BlacklistedToken.findOne({ token });
   if (isBlacklisted) {
-    return res.status(401).json({ error: "Please Login Again " });
+    return res.status(401).json({ error: "Please provide valid token" });
   }
 
 
