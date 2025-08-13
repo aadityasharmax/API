@@ -40,6 +40,10 @@ const userSchema = new mongoose.Schema({
         default:false,
     },
 
+    verificationToken:{
+        type : String
+    },
+
     refreshToken: {
         type: String,
         default: ''

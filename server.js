@@ -1,7 +1,11 @@
+const dotenv = require('dotenv');
+
+// Load .env variables
+dotenv.config();
+
 // Core modules
 const express = require('express');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 
 // Custom modules
@@ -16,8 +20,8 @@ const { getLocations } = require('./controllers/locationController');
 
 const listingRoutes = require('./routes/listingRoutes')
 
-// Load .env variables
-dotenv.config();
+
+
 
 
 const app = express();
@@ -26,7 +30,7 @@ const app = express();
 // Enable cookie parsing middleware
 app.use(cookieParser());
 
-
+app.use(express.static('public'));
 // Enable JSON and URL-encoded
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -54,10 +58,10 @@ mongoose.connect(process.env.MONGO_URI)
 // Register route handlers
 
 // Auth related routes
-app.use('/api', authRoutes);
+app.use('/', authRoutes);
 
 // User routes
-app.use('/api/user', userRoutes);   
+app.use('/user', userRoutes);   
 
 // Serve uploaded files statically from the 'uploads' directory
 app.use('/uploads', express.static('uploads'));
@@ -69,7 +73,11 @@ app.use('/locations',getLocations)
 
 // Listing routes
 
-app.use('/api', listingRoutes)
+app.use('/', listingRoutes)
+
+//  Email verification 
+
+app.use("/auth", require("./routes/authRoutes"));
 
 
 
