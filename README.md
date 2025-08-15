@@ -1,4 +1,4 @@
-# DreamHub API
+# API
 
 A RESTful API built with **Node.js**, **Express**, and **MongoDB** for managing users, listings, categories, and locations.  
 It includes authentication, authorization, image upload, and seeding utilities — ready to be integrated into a full-stack application.
@@ -95,18 +95,18 @@ API-main/
 ### **Auth**
 | Method | Endpoint          | Description          |
 |--------|-------------------|----------------------|
-| POST   | `/api/auth/register` | Register a new user |
-| POST   | `/api/auth/login`    | Login user          |
-| POST   | `/api/auth/logout`   | Logout user         |
+| POST   | `/register` | Register a new user |
+| POST   | `/login`    | Login user          |
+| POST   | `/logout`   | Logout user         |
 
 ### **Listings**
 | Method | Endpoint                | Description         |
 |--------|-------------------------|---------------------|
-| GET    | `/api/listings`         | Get all listings    |
-| POST   | `/api/listings`         | Create new listing  |
-| GET    | `/api/listings/:id`     | Get listing by ID   |
-| PUT    | `/api/listings/:id`     | Update listing      |
-| DELETE | `/api/listings/:id`     | Delete listing      |
+| GET    | `/listings`         | Get all listings    |
+| POST   | `/listings`         | Create new listing  |
+| GET    | `/listings/:id`     | Get listing by ID   |
+| PUT    | `/listings/:id`     | Update listing      |
+| DELETE | `/listings/:id`     | Delete listing      |
 
 *(Similar CRUD routes exist for Categories and Locations)*
 
@@ -134,4 +134,4 @@ Ensure your production environment variables are set and MongoDB Atlas connectio
 
 ## 📜 License
 
-This project is licensed under the MIT License.
+This project is open sourced !!
