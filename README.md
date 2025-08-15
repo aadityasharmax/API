@@ -37,17 +37,19 @@ It includes authentication, authorization, image upload, and seeding utilities �
 
 ## 📂 Folder Structure
 
+```
 API-main/
-├── controllers/ # Route handlers
-├── middleware/ # Auth, role, upload, and validators
-├── models/ # Mongoose schemas
-├── public/assets/ # Static files (logos, etc.)
-├── routes/ # API route definitions
-├── seeders/ # Seeder scripts for DB
-├── utils/ # Utility functions (e.g., sendEmail)
-├── server.js # App entry point
+├── controllers/        # Route handlers
+├── middleware/         # Auth, role, upload, and validators
+├── models/             # Mongoose schemas
+├── public/assets/      # Static files (logos, etc.)
+├── routes/             # API route definitions
+├── seeders/            # Seeder scripts for DB
+├── utils/              # Utility functions (e.g., sendEmail)
+├── server.js           # App entry point
 ├── package.json
 └── .gitignore
+```
 
 ---
 
@@ -57,60 +59,79 @@ API-main/
    ```bash
    git clone https://github.com/yourusername/DreamHub-API.git
    cd DreamHub-API
-   
+   ```
+
 2. **Install dependencies**
    ```bash
    npm install
+   ```
 
-3. **Setup environment variables**
-   ```bash
+3. **Set up environment variables**  
+   Create a `.env` file in the root directory:
+   ```env
+   PORT=5000
    MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/dbname
    JWT_SECRET=your_jwt_secret
    EMAIL_USER=your_email@example.com
    EMAIL_PASS=your_email_password
+   ```
 
 4. **Run database seeders (optional)**
    ```bash
    node seeders/categorySeeder.js
    node seeders/locationSeeder.js
    node seeders/seedUsers.js
+   ```
 
 5. **Start the development server**
    ```bash
    npm run dev
+   ```
+
+---
 
 ## 📡 API Endpoints
 
-**Auth**
-Method	Endpoint	Description
-POST - /api/auth/register	Register a new user
-POST - /api/auth/login	Login user
-POST - /api/auth/logout	Logout user
+### **Auth**
+| Method | Endpoint          | Description          |
+|--------|-------------------|----------------------|
+| POST   | `/api/auth/register` | Register a new user |
+| POST   | `/api/auth/login`    | Login user          |
+| POST   | `/api/auth/logout`   | Logout user         |
 
-**Listings**
-Method	Endpoint	Description
-GET -	/api/listings	Get all listings
-POST -	/api/listings	Create new listing
-GET -	/api/listings/:id	Get listing by ID
-PUT -	/api/listings/:id	Update listing
-DELETE -	/api/listings/:id	Delete listing
+### **Listings**
+| Method | Endpoint                | Description         |
+|--------|-------------------------|---------------------|
+| GET    | `/api/listings`         | Get all listings    |
+| POST   | `/api/listings`         | Create new listing  |
+| GET    | `/api/listings/:id`     | Get listing by ID   |
+| PUT    | `/api/listings/:id`     | Update listing      |
+| DELETE | `/api/listings/:id`     | Delete listing      |
 
+*(Similar CRUD routes exist for Categories and Locations)*
+
+---
 
 ## 🧪 Running in Production
 
-  ```bash
-   npm run dev
+```bash
+npm start
 ```
+
+Ensure your production environment variables are set and MongoDB Atlas connection is configured.
+
+---
 
 ## 🤝 Contribution
 
-1. Fork the repository
-
-2. Create a new feature branch (git checkout -b feature-name)
-
-3.  Commit your changes (git commit -m 'Add some feature')
-
-4.  Push to the branch (git push origin feature-name)
-
+1. Fork the repository  
+2. Create a new feature branch (`git checkout -b feature-name`)  
+3. Commit your changes (`git commit -m 'Add some feature'`)  
+4. Push to the branch (`git push origin feature-name`)  
 5. Open a Pull Request
 
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
